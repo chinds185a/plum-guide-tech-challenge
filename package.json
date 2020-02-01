@@ -1,0 +1,11 @@
+{
+    "name": "plum-guide-tech-challenge",
+    "private": true,
+    "workspaces": [
+        "packages/*"
+    ],
+    "scripts": {
+        "server": "yarn workspace server start",
+        "start": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+    }
+}
