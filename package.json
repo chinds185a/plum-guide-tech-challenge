@@ -7,9 +7,10 @@
     "scripts": {
         "server": "yarn workspace server start",
         "application": "yarn workspace application develop",
-        "start": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+        "start": "concurrently --kill-others-on-fail \"yarn server\" \"yarn application\""
     },
     "dependencies": {
+        "concurrently": "^5.1.0",
         "gatsby-cli": "^2.8.28"
     }
 }
