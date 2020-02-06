@@ -1,5 +1,5 @@
 import React from "react"
-import { Container, Row, Col } from "react-grid"
+import { Grid, Cell } from "styled-css-grid"
 
 // components
 import Layout from "../components/Layout"
@@ -13,23 +13,25 @@ const Home = ({ pageContext }) => {
 
   return (
     <Layout>
-      <Container>
-        <span>{location}</span>
-        <h1>{name}</h1>
-        <img src={sanitizeUrl(Image)} alt={Title} />
-        <Banner title={Title} location={location} price={Price} />
-      </Container>
-      <Container>
-        <Row>
-          <Col>
-            <h1>Plum's Review</h1>
-            <p>{PlumsReview}</p>
-          </Col>
-          <Col>
-            <span>details component</span>
-          </Col>
-        </Row>
-      </Container>
+      <Grid columns={12}>
+        <Cell width={10} height={2} left={2} center middle>
+          <span>{location}</span>
+          <h1>{name}</h1>
+        </Cell>
+        <Cell width={12} center>
+          <img src={sanitizeUrl(Image)} alt={Title} width="100%" />
+        </Cell>
+        <Cell width={10} height={2} left={2}>
+          <Banner title={Title} location={location} price={Price} />
+        </Cell>
+        <Cell width={4} left={3}>
+          <h1>Plum's Review</h1>
+          <p>{PlumsReview}</p>
+        </Cell>
+        <Cell width={3}>
+          <span>details component</span>
+        </Cell>
+      </Grid>
     </Layout>
   )
 }
