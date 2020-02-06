@@ -6,6 +6,7 @@ import { Cell } from "styled-css-grid"
 const ReviewTitle = styled.h4`
   font-size: 1.8em;
   color: ${props => props.theme.colours.darkGrey};
+  margin-bottom: 0.8em;
 `
 
 const ReviewText = styled.p`
@@ -13,7 +14,7 @@ const ReviewText = styled.p`
 `
 
 const Review = ({ title, reviewText }) => (
-  <Cell width={4} left={3}>
+  <Cell width={6} left={2}>
     <ReviewTitle>{title}</ReviewTitle>
     <ReviewText>{reviewText}</ReviewText>
   </Cell>
