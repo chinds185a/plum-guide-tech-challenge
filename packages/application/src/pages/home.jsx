@@ -1,38 +1,46 @@
 import React from "react"
+import { ThemeProvider } from "styled-components"
 import { Grid, Cell } from "styled-css-grid"
 
 // components
 import Layout from "../components/Layout"
-import Banner from "../components/Banner"
+import HomeTitle from "../components/Home/Title"
+import Banner from "../components/Home/Banner"
+import Review from "../components/Home/Review"
 
 const sanitizeUrl = require("@braintree/sanitize-url").sanitizeUrl // something with the fake graphql server is messing with the urls
+
+// theme
+const theme = {
+  colours: {
+    lightGrey: "#82868c",
+    darkGrey: "#252628",
+    white: "#FFFFFF",
+  },
+}
 
 const Home = ({ pageContext }) => {
   const { name, location, highlights } = pageContext
   const { Image, Title, PlumsReview, Price } = highlights
 
   return (
-    <Layout>
-      <Grid columns={12}>
-        <Cell width={10} height={2} left={2} center middle>
-          <span>{location}</span>
-          <h1>{name}</h1>
-        </Cell>
-        <Cell width={12} center>
-          <img src={sanitizeUrl(Image)} alt={Title} width="100%" />
-        </Cell>
-        <Cell width={10} height={2} left={2}>
+    <ThemeProvider theme={theme}>
+      <Layout>
+        <Grid columns={12}>
+          <HomeTitle name={name} location={location} />
+          <Cell width={12} center>
+            <img src={sanitizeUrl(Image)} alt={Title} width="100%" />
+          </Cell>
+
           <Banner title={Title} location={location} price={Price} />
-        </Cell>
-        <Cell width={4} left={3}>
-          <h1>Plum's Review</h1>
-          <p>{PlumsReview}</p>
-        </Cell>
-        <Cell width={3}>
-          <span>details component</span>
-        </Cell>
-      </Grid>
-    </Layout>
+          <Review reviewText={PlumsReview} />
+
+          <Cell width={3}>
+            <span>details component</span>
+          </Cell>
+        </Grid>
+      </Layout>
+    </ThemeProvider>
   )
 }
 

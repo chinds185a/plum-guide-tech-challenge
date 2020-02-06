@@ -15,6 +15,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -36,6 +37,16 @@ module.exports = {
         fieldName: "plumGuide",
         // URL to query from
         url: "http://localhost:3000/graphql",
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Libre Baskerville`,
+          `Libre Baskerville\:400,700`, // you can also specify font weights and styles
+        ],
+        display: "swap",
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

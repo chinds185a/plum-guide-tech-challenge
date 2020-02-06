@@ -4,24 +4,24 @@ import styled from "@emotion/styled"
 
 // Styled Components
 const StyledButton = styled.button`
+  font-size: 0.9em;
   background-color: #fdbb30;
   border-radius: ${({ rounded }) => (rounded ? "20px" : 0)};
-  padding: 5px 20px;
+  padding: 12px 20px;
+  border: 0;
 `
 
-const Button = ({ label, rounded, size }) => (
+const Button = ({ label, rounded }) => (
   <StyledButton rounded={rounded}>{label}</StyledButton>
 )
 
 Button.propTypes = {
   label: string,
   rounded: bool,
-  size: string,
 }
 
 Button.defaultProps = {
   rounded: true,
-  size: "small",
 }
 
 export default Button
