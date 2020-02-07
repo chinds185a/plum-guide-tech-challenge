@@ -8,6 +8,7 @@ import Layout from "../components/Layout"
 import HomeTitle from "../components/Home/Title"
 import Banner from "../components/Home/Banner"
 import DetailsContainer from "../components/Home/DetailsContainer"
+import RelatedHomes from "../components/Home/Related"
 
 const sanitizeUrl = require("@braintree/sanitize-url").sanitizeUrl // something with the fake graphql server is messing with the urls
 
@@ -37,6 +38,7 @@ const Home = ({ pageContext }) => {
           <Banner title={Title} location={location} price={Price} />
         </Container>
         <DetailsContainer PlumsReview={PlumsReview} />
+        <RelatedHomes />
       </Layout>
     </ThemeProvider>
   )
