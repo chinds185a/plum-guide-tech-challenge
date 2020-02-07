@@ -1,8 +1,9 @@
-import React from "react"
+import React, { useState } from "react"
 import styled, { createGlobalStyle } from "styled-components"
 
 // components
 import Header from "../Header"
+import Panel from "../Menu/Panel"
 
 const GlobalStyle = createGlobalStyle`
 {
@@ -26,11 +27,13 @@ const Main = styled.main`
 `
 
 const Layout = ({ children }) => {
+  const [open, setOpen] = useState(false)
   return (
     <>
       <GlobalStyle />
-      <Header />
-      <Main>{children}</Main>
+      <Header open={open} setOpen={setOpen} />
+      <Panel open={open} setOpen={setOpen} />
+      <Main id="page-wrap">{children}</Main>
     </>
   )
 }

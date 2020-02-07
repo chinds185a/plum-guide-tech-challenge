@@ -15,8 +15,6 @@ exports.createPages = async ({ actions, graphql }) => {
     }
   `)
 
-  console.log(JSON.stringify(data.plumGuide.allHomes))
-
   data.plumGuide.allHomes.forEach(
     ({ id, name, slug, location, Highlights }) => {
       actions.createPage({

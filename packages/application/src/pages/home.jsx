@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { ThemeProvider } from "styled-components"
-import { ScreenClassProvider } from "react-grid-system"
-import { Container, Row, Col } from "react-grid-system"
+import { Container, ScreenClassProvider } from "react-grid-system"
 
 // components
 import Layout from "../components/Layout"
@@ -27,6 +26,7 @@ const theme = {
 const Home = ({ pageContext }) => {
   const [relatedHomes, setRelatedHomes] = useState(null)
   const { homeId, name, location, highlights } = pageContext
+  console.log(highlights)
   const { Image, Title, PlumsReview, Price } = highlights
   const relatedHomesUrl = `http://my-json-server.typicode.com/chinds185a/plum-guide-tech-challenge/homes/${homeId}`
 

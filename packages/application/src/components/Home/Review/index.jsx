@@ -1,7 +1,7 @@
 import React from "react"
 import { string } from "prop-types"
 import styled from "styled-components"
-import { Cell } from "styled-css-grid"
+import { Row, Col } from "react-grid-system"
 
 const ReviewTitle = styled.h4`
   font-size: 1.8em;
@@ -14,10 +14,10 @@ const ReviewText = styled.p`
 `
 
 const Review = ({ title, reviewText }) => (
-  <Cell width={6} left={2}>
+  <Col>
     <ReviewTitle>{title}</ReviewTitle>
     <ReviewText>{reviewText}</ReviewText>
-  </Cell>
+  </Col>
 )
 
 Review.propTypes = {

@@ -2,7 +2,10 @@ import React from "react"
 import styled from "styled-components"
 import { bool, func } from "prop-types"
 
+import { slide as Menu } from "react-burger-menu"
+
 export const StyledBurger = styled.button`
+  margin-top: 15px;
   position: absolute;
   left: 2rem;
   display: flex;
@@ -22,7 +25,7 @@ export const StyledBurger = styled.button`
 
   div {
     width: 2rem;
-    height: 0.25rem;
+    height: 0.1rem;
     background: ${({ theme, open }) =>
       open ? theme.colours.white : theme.colours.darkGrey};
     border-radius: 10px;
