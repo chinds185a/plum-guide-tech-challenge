@@ -1,27 +1,31 @@
 import React, { useState } from "react"
-import { Grid, Cell } from "styled-css-grid"
+import { Container, Row, Col } from "react-grid-system"
 import styled from "styled-components"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faSearch } from "@fortawesome/free-solid-svg-icons"
 
 // components
 import Burger from "../Menu/Burger"
 import Panel from "../Menu/Panel"
 
 const ConatinerBorder = theme => `1px solid ${theme.colours.lightGrey}`
-const Container = styled(Grid)`
+const StyledContainer = styled(Container)`
   height: 60px;
   border-bottom: ${({ theme }) => ConatinerBorder(theme)};
   margin-bottom: 3em;
 `
 
-const MenuContainer = styled(Cell)`
-  border-right: ${({ theme }) => ConatinerBorder(theme)};
+const StyledRow = styled(Row)`
+  height: 60px;
 `
 
-const SearchContainer = styled(Cell)`
-  border-left: ${({ theme }) => ConatinerBorder(theme)};
+const MenuContainer = styled(Col)`
+  height: 100%;
 `
 
-const Brand = styled.span`
+const SearchContainer = styled(Col)``
+
+const Brand = styled(Col)`
   font-family: "Libre Baskerville";
   font-size: 1.9em;
   color: ${({ theme }) => theme.colours.darkGrey};
@@ -31,18 +35,20 @@ const Brand = styled.span`
 const Header = () => {
   const [open, setOpen] = useState(false)
   return (
-    <Container columns={12}>
-      <MenuContainer width={1} center middle>
-        <Burger open={open} setOpen={setOpen} />
-        <Panel open={open} setOpen={setOpen} />
-      </MenuContainer>
-      <Cell width={10} center middle>
-        <Brand>Plum Guide</Brand>
-      </Cell>
-      <SearchContainer width={1} center middle>
-        S
-      </SearchContainer>
-    </Container>
+    <StyledContainer fluid>
+      <StyledRow align="center">
+        <MenuContainer xs={2} sm={1} align="center">
+          <Burger open={open} setOpen={setOpen} />
+          <Panel open={open} setOpen={setOpen} />
+        </MenuContainer>
+
+        <Brand align="center">Plum Guide</Brand>
+
+        <SearchContainer xs={2} sm={1} align="center">
+          <FontAwesomeIcon icon={faSearch} />
+        </SearchContainer>
+      </StyledRow>
+    </StyledContainer>
   )
 }
 

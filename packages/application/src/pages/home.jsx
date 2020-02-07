@@ -1,6 +1,7 @@
 import React from "react"
 import { ThemeProvider } from "styled-components"
 import { Grid, Cell } from "styled-css-grid"
+import { Container, Row, Col } from "react-grid-system"
 
 // components
 import Layout from "../components/Layout"
@@ -28,13 +29,13 @@ const Home = ({ pageContext }) => {
   return (
     <ThemeProvider theme={theme}>
       <Layout>
-        <Grid columns={12}>
+        <Container fluid columns={12}>
           <HomeTitle name={name} location={location} />
           <Cell width={12} center>
             <img src={sanitizeUrl(Image)} alt={Title} width="100%" />
           </Cell>
           <Banner title={Title} location={location} price={Price} />
-        </Grid>
+        </Container>
         <DetailsContainer PlumsReview={PlumsReview} />
       </Layout>
     </ThemeProvider>

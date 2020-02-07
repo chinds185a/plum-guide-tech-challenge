@@ -1,12 +1,13 @@
 import React from "react"
 import styled from "styled-components"
 import { Grid, Cell } from "styled-css-grid"
+import { Container, Row, Col } from "react-grid-system"
 
 // components
 import Button from "../../Button"
 
 // Styled Components
-const StyledRow = styled(Grid)`
+const StyledRow = styled(Row)`
   border: 1px solid ${props => props.theme.colours.lightGrey};
   padding: 1.1em 1em;
   margin-top: -50px;
@@ -39,21 +40,23 @@ const PriceLabel = styled.span`
 
 const Banner = ({ title, location, price }) => {
   return (
-    <Cell width={10} left={2}>
-      <StyledRow flow="row">
-        <Cell width={6} middle>
-          <Title>{title}</Title>
-          <Location>{location}</Location>
-        </Cell>
-        <Cell width={2} middle flow="row">
-          <Price>£{price}</Price>
-          <PriceLabel>Total stay</PriceLabel>
-        </Cell>
-        <Cell width={4} middle>
-          <Button label="RESERVE" />
-        </Cell>
-      </StyledRow>
-    </Cell>
+    <Container fluid align="center">
+      <Col lg={10}>
+        <StyledRow align="center">
+          <Col sm={12} md={6} justify="start">
+            <Title>{title}</Title>
+            <Location>{location}</Location>
+          </Col>
+          <Col sm={12} md={3}>
+            <Price>£{price}</Price>
+            <PriceLabel>Total stay</PriceLabel>
+          </Col>
+          <Col sm={12} md={3}>
+            <Button label="RESERVE" />
+          </Col>
+        </StyledRow>
+      </Col>
+    </Container>
   )
 }
 

@@ -7,7 +7,7 @@ import Button from "../../Button"
 import Avatar from "./Avatar"
 
 const Container = styled(Cell)`
-  padding: 3em;
+  padding: 3em 0;
 `
 
 const HomeDetails = styled.div`
