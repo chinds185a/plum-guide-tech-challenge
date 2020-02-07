@@ -33,7 +33,7 @@ yarn install
 yarn start
 ```
 
-The new hopem page will be avaiable [here](http://localhost:8000/kensington_church_street_vii/)
+The new home page will be avaiable [localhost:8000/kensington_church_street_vii/](http://localhost:8000/kensington_church_street_vii/)
 
 ## Local Setup
 
