@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import { Grid, Cell } from "styled-css-grid"
 import { Container, Row, Col } from "react-grid-system"
 
 // components

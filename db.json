@@ -4,16 +4,16 @@
             "id": 1,
             "Highlights": [
                 {
-                    "Title": "A gorgeous and shaded private roof terrace",
-                    "Image": "https://via.placeholder.com/500x500"
+                    "description": "A gorgeous and shaded private roof terrace",
+                    "image": "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&dpr=3"
                 },
                 {
-                    "Title": "Ample dining space to entertain",
-                    "Image": "https://via.placeholder.com/500x500"
+                    "description": "Ample dining space to entertain",
+                    "image": "https://images.pexels.com/photos/1743227/pexels-photo-1743227.jpeg?auto=compress&cs=tinysrgb&dpr=2"
                 },
                 {
-                    "Title": "Cloud-like pillows and soft egyptian cotton beddings",
-                    "Image": "https://via.placeholder.com/500x500"
+                    "description": "Cloud-like pillows and soft egyptian cotton beddings",
+                    "image": "https://images.pexels.com/photos/271743/pexels-photo-271743.jpeg?auto=compress&cs=tinysrgb&dpr=1"
                 }
             ]
         }

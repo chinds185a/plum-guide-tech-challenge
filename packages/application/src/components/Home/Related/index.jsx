@@ -11,21 +11,31 @@ const Title = styled.h4`
   margin-bottom: 0.8em;
 `
 
-const RelatedHomes = ({ data }) => (
-  <Container fluid md ld xl>
-    <Row justify="between" align="center">
-      <Col align="center">
-        <Row>
-          <Title>Handpicked highlights</Title>
-        </Row>
-        <Row>
-          <Card title="Highlight #1" description={data.Highlights.title} />
-          <Card title="Highlight #1" description={data.Highlights.title} />
-          <Card title="Highlight #1" description={data.Highlights.title} />
-        </Row>
-      </Col>
-    </Row>
-  </Container>
-)
+const RelatedHomes = ({ data }) => {
+  let itemNumber = 0
+  return (
+    <Container fluid md lg xl>
+      <Row justify="between" align="center">
+        <Col align="center">
+          <Row>
+            <Title>Handpicked highlights</Title>
+          </Row>
+          <Row>
+            {data.map(highlight => {
+              itemNumber++
+              return (
+                <Card
+                  title={`Highlight #${itemNumber}`}
+                  description={highlight.description}
+                  image={highlight.image}
+                />
+              )
+            })}
+          </Row>
+        </Col>
+      </Row>
+    </Container>
+  )
+}
 
 export default RelatedHomes

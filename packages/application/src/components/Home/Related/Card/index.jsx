@@ -1,38 +1,33 @@
 import React from "react"
 import { string } from "prop-types"
-import { Container, Row, Col } from "react-grid-system"
-import styled from "styled-components"
-import { Picture } from "react-responsive-picture"
+import { Row, Col } from "react-grid-system"
+import ProgressiveImage from "react-progressive-image"
 
-const Card = ({ title, description }) => (
+const Card = ({ title, description, image }) => (
   <Col md={4}>
     <Row>
-      <Picture
-        sources={[
-          {
-            srcSet: "https://via.placeholder.com/300X300",
-            media: "(max-width: 340px)",
-          },
-          {
-            srcSet: "https://via.placeholder.com/400X400",
-            media: "(max-width: 540px)",
-          },
-          {
-            srcSet: "https://via.placeholder.com/500X500 ",
-          },
-          {
-            srcSet: "https://via.placeholder.com/500x500.webp",
-            type: "image/webp",
-          },
-        ]}
-        style={{ width: "100%" }}
-      />
+      <ProgressiveImage
+        src={`${image}&w=800&h=500`}
+        srcSetData={{
+          srcSet: `${image}&w=320&h=160 320w, ${image}&w=700&h=300 700w, ${image}&w=1000&h=500 1000w`,
+        }}
+        placeholder={`${image}&w=100&h=50`}
+      >
+        {(src, loading, srcSetData) => (
+          <img
+            style={{ opacity: loading ? 0.5 : 1, objectFit: "cover" }}
+            src={src}
+            srcSet={srcSetData.srcSet}
+            alt={description}
+          />
+        )}
+      </ProgressiveImage>
     </Row>
     <Row>
-      <h3>Highlight #1</h3>
+      <h3>{title}</h3>
     </Row>
     <Row>
-      <h3>A gorgeous and shaded private roof terrace</h3>
+      <h3>{description}</h3>
     </Row>
   </Col>
 )
