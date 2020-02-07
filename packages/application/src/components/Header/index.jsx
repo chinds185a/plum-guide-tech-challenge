@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Container, Row, Col } from "react-grid-system"
+import { Container, Row, Col, useScreenClass } from "react-grid-system"
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSearch } from "@fortawesome/free-solid-svg-icons"
@@ -27,13 +27,15 @@ const SearchContainer = styled(Col)``
 
 const Brand = styled(Col)`
   font-family: "Libre Baskerville";
-  font-size: 1.9em;
+  font-size: ${({ screenclass }) =>
+    ["xs", "sm"].includes(screenclass) ? "1em" : "1.9em"};
   color: ${({ theme }) => theme.colours.darkGrey};
   text-transform: uppercase;
 `
 
 const Header = () => {
   const [open, setOpen] = useState(false)
+  const screenClass = useScreenClass()
   return (
     <StyledContainer fluid>
       <StyledRow align="center">
@@ -42,7 +44,9 @@ const Header = () => {
           <Panel open={open} setOpen={setOpen} />
         </MenuContainer>
 
-        <Brand align="center">Plum Guide</Brand>
+        <Brand align="center" screenclass={screenClass}>
+          Plum Guide
+        </Brand>
 
         <SearchContainer xs={2} sm={1} align="center">
           <FontAwesomeIcon icon={faSearch} />

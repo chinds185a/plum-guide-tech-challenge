@@ -11,17 +11,17 @@ const Title = styled.h4`
   margin-bottom: 0.8em;
 `
 
-const RelatedHomes = () => (
-  <Container fluid md>
-    <Row justify="between">
-      <Col>
+const RelatedHomes = ({ data }) => (
+  <Container fluid md ld xl>
+    <Row justify="between" align="center">
+      <Col align="center">
         <Row>
           <Title>Handpicked highlights</Title>
         </Row>
         <Row>
-          <Card />
-          <Card />
-          <Card />
+          <Card title="Highlight #1" description={data.Highlights.title} />
+          <Card title="Highlight #1" description={data.Highlights.title} />
+          <Card title="Highlight #1" description={data.Highlights.title} />
         </Row>
       </Col>
     </Row>
