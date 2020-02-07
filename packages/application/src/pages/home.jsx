@@ -26,19 +26,16 @@ const theme = {
 const Home = ({ pageContext }) => {
   const [relatedHomes, setRelatedHomes] = useState(null)
   const { homeId, name, location, highlights } = pageContext
-  console.log(highlights)
   const { Image, Title, PlumsReview, Price } = highlights
   const relatedHomesUrl = `http://my-json-server.typicode.com/chinds185a/plum-guide-tech-challenge/homes/${homeId}`
 
   useEffect(() => {
-    console.log(relatedHomesUrl)
     fetch(relatedHomesUrl)
       .then(response => response.json())
       .then(resultData => {
-        console.log(resultData)
         setRelatedHomes(resultData)
       })
-  }, [])
+  }, [relatedHomesUrl])
 
   return (
     <ScreenClassProvider>

@@ -4,7 +4,7 @@
 
 The project was build using yarn workspaces, express, gatsby and json-graphql-server.
 
-The projects demostrates the use of Gatsby for the front end with a mixture of build time data fetching (using graphql) and client side data fetching using the fetch API.
+The project demostrates the use of Gatsby for the front end with a mixture of build time data fetching (using graphql) and client side data fetching using the fetch API.
 The reason I opted for this approach was to show the flexibility of gatsby, which most would presume is only good for rendering fully static sites. The page you asked me to build show some content which is probably mostly static (the plum guide review, reviewer, the photos the home featurs etc) and some which is potentially more dynamic, the costs of rental, the highlighted/related homes etc.
 
 With this in mine the home page is compiled out build time using data from the local graphql endpoint, the when the react components render on the browser the fetch api kicks in to load gthe more dynamic cotent. Giving a super fast page (as most of statically rendered) with some dynamic components that can be updated in real time as the dat on the api changes.
@@ -33,7 +33,7 @@ yarn install
 yarn start
 ```
 
-The new home page will be avaiable [localhost:8000/kensington_church_street_vii/](http://localhost:8000/kensington_church_street_vii/)
+The new page will be avaiable [localhost:8000/kensington_church_street_vii/](http://localhost:8000/kensington_church_street_vii/)
 
 ## Local Setup
 

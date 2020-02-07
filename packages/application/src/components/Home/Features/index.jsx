@@ -36,7 +36,7 @@ const FeatureSets = styled.span`
   padding: 1em 0;
 `
 
-const Features = ({}) => (
+const Features = () => (
   <Container width={4}>
     <Grid columns={4}>
       <Cell width={4} left={1}>

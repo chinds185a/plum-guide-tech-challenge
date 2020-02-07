@@ -1,7 +1,7 @@
 import React from "react"
 import { string } from "prop-types"
 import styled from "styled-components"
-import { Row, Col } from "react-grid-system"
+import { Col } from "react-grid-system"
 
 const ReviewTitle = styled.h4`
   font-size: 1.8em;

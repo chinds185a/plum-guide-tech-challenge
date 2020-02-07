@@ -2,8 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import { bool, func } from "prop-types"
 
-import { slide as Menu } from "react-burger-menu"
-
 export const StyledBurger = styled.button`
   margin-top: 15px;
   position: absolute;
